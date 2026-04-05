@@ -67,7 +67,7 @@ modules:
         # Inject the hardware source link into the newly generated master config
         echo "source = ~/.config/hypr/laptop.conf" >> /usr/etc/skel/.config/hypr/hyprland.conf
 
-    - type: default-flatpaks
+  - type: default-flatpaks
     system:
       repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
       repo-name: flathub
