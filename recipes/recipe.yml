@@ -67,13 +67,13 @@ modules:
         echo "source = ~/.config/hypr/laptop.conf" >> /usr/etc/skel/.config/hypr/hyprland.conf
 
   - type: default-flatpaks
-    repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-    repo-name: flathub
-    system:
-      install:
-        - io.github.kolunmi.Bazaar    
-        - dev.zed.Zed                 
-        - app.zen_browser.zen         
+    configurations:
+      - scope: system
+        install:
+          - io.github.kolunmi.Bazaar    
+          - dev.zed.Zed                 
+          - app.zen_browser.zen         
+  
      
 
   - type: systemd
