@@ -49,6 +49,7 @@ modules:
       - power-profiles-daemon
       - fira-code-fonts
       - cups
+      
  # Execute the official installer logic non-interactively
   - type: script
     snippets:
@@ -66,13 +67,14 @@ modules:
         echo "source = ~/.config/hypr/laptop.conf" >> /usr/etc/skel/.config/hypr/hyprland.conf
 
   - type: default-flatpaks
+    repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    repo-name: flathub
     system:
-      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      repo-name: flathub
       install:
         - io.github.kolunmi.Bazaar    
         - dev.zed.Zed                 
         - app.zen_browser.zen         
+     
 
   - type: systemd
     system:
