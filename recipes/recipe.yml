@@ -10,16 +10,15 @@ modules:
 
   - type: rpm-ostree
     repos:
+      # Official DankLinux Repos
       - https://copr.fedorainfracloud.org/coprs/avengemedia/danklinux/repo/fedora-43/avengemedia-danklinux-fedora-43.repo
       - https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-43/avengemedia-dms-fedora-43.repo
+      # Dedicated Hyprland Repo to guarantee availability
+      - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-43/solopasha-hyprland-fedora-43.repo
     install:
-      # The Dank Suite (Replicates the curl installer packages)
+      # Core DE & Native Login
       - dms
-      - dankinstall
       - dgop
-      - dsearch
-      
-      # Core DE & Native Login Manager
       - hyprland
       - greetd
       - dms-greeter
@@ -45,13 +44,12 @@ modules:
       - brightnessctl
       - network-manager-applet
       - blueman
-      - polkit-gnome
+      - lxqt-policykit
       - wl-clipboard
       - power-profiles-daemon
-      - fira-code-nerd-font
+      - fira-code-fonts
       - cups
-
-  # Execute the official installer logic non-interactively
+ # Execute the official installer logic non-interactively
   - type: script
     snippets:
       - |
