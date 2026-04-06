@@ -13,13 +13,13 @@ modules:
       # Official DankLinux Repos
       - https://copr.fedorainfracloud.org/coprs/avengemedia/danklinux/repo/fedora-43/avengemedia-danklinux-fedora-43.repo
       - https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-43/avengemedia-dms-fedora-43.repo
-      # Dedicated Hyprland Repo to guarantee availability
-      - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-43/solopasha-hyprland-fedora-43.repo
+      
     install:
       # Core DE & Native Login
       - dms
       - dgop
       - hyprland
+      - hyprland-qtutils
       - greetd
       - dms-greeter
       - quickshell 
