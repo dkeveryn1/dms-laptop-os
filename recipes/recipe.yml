@@ -7,6 +7,7 @@ modules:
   - type: files
     files:
       - usr: /usr
+      - etc: /etc
 
   - type: rpm-ostree
     repos:
@@ -41,22 +42,6 @@ modules:
       - power-profiles-daemon
       - fira-code-fonts
       - cups
-      
- # Execute the official installer logic non-interactively
-  - type: script
-    snippets:
-      - |
-        # Generate the configs for Hyprland and Kitty
-        dms setup --compositor hyprland --terminal kitty
-        
-        # Move the generated configs to the system skeleton
-        mkdir -p /usr/etc/skel/.config
-        cp -r /root/.config/dms /usr/etc/skel/.config/
-        cp -r /root/.config/hypr /usr/etc/skel/.config/
-        cp -r /root/.config/kitty /usr/etc/skel/.config/
-        
-        # Inject the hardware source link into the newly generated master config
-        echo "source = ~/.config/hypr/laptop.conf" >> /usr/etc/skel/.config/hypr/hyprland.conf
 
   - type: default-flatpaks
     configurations:
@@ -65,9 +50,8 @@ modules:
           - io.github.kolunmi.Bazaar    
           - dev.zed.Zed                 
           - app.zen_browser.zen         
-  
+
   - type: systemd
     system:
       enabled:
         - greetd.service
-
