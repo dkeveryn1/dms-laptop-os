@@ -17,6 +17,7 @@ modules:
       - dms
       - dgop
       - hyprland
+      - hypridle
       - hyprland-qtutils
       - greetd
       - dms-greeter
