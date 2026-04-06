@@ -74,10 +74,8 @@ modules:
           - dev.zed.Zed                 
           - app.zen_browser.zen         
   
-     
-
   - type: systemd
     system:
       enabled:
         - greetd.service
-        - dsearch.service # Enables the background daemon for the launcher
+
