@@ -15,7 +15,6 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-42/solopasha-hyprland-fedora-42.repo
     install:
       - dms
-      - dsearch 
       - dgop
       - hyprland
       - hyprland-qtutils
