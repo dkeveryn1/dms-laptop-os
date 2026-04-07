@@ -30,6 +30,8 @@ modules:
       - qt6ct
       - qt6-qtmultimedia
       - qt6-qtshadertools
+      - qt6-imageformats 
+      - kimageformats
       - jemalloc 
       - nemo
       - nemo-fileroller
@@ -37,12 +39,7 @@ modules:
       - xdg-desktop-portal-hyprland 
       - xdg-desktop-portal-gtk      
       - gnome-keyring               
-      - brightnessctl
-      - lxqt-policykit
-      - wl-clipboard
-      - cliphist
       - power-profiles-daemon
-      - fira-code-fonts
       - cups
       - accountsservice
       - grim
@@ -50,6 +47,10 @@ modules:
       - playerctl
       - swww
       - rsms-inter-fonts
+      - khal
+      - cups-pk-helper
+      - fprintd 
+      - fprintd-pam
 
   - type: default-flatpaks
     configurations:
