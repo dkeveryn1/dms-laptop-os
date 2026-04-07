@@ -61,7 +61,12 @@ modules:
         install:
           - io.github.kolunmi.Bazaar    
           - dev.zed.Zed                 
-          - app.zen_browser.zen         
+          - app.zen_browser.zen   
+
+  - type: script
+    scripts:
+      - chmod +x /usr/etc/skel/.config/hypr/scripts/quickshell/network/bluetooth_panel_logic.sh
+      - chmod +x /usr/etc/skel/.config/hypr/scripts/quickshell/network/wifi_panel_logic.sh
 
   - type: systemd
     system:
