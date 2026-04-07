@@ -43,6 +43,10 @@ modules:
       - fira-code-fonts
       - cups
       - accountsservice
+      - grim
+      - slurp
+      - playerctl
+      - swww
 
   - type: default-flatpaks
     configurations:
