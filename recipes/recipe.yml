@@ -17,7 +17,6 @@ modules:
       - dms
       - dgop
       - hyprland
-      - hypridle
       - hyprland-qtutils
       - greetd
       - dms-greeter
@@ -26,6 +25,8 @@ modules:
       - adw-gtk3-theme
       - matugen
       - cava
+      - qt6-qtwayland
+      - qt6-qtdeclarative
       - qt6ct
       - qt6-qtmultimedia
       - nemo
