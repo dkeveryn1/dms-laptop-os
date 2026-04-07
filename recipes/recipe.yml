@@ -6,7 +6,9 @@ image-version: 42
 modules:
   - type: files
     files:
-      - usr: /usr
+      - source: /usr
+        destination: /usr
+ 
 
   - type: rpm-ostree
     repos:
