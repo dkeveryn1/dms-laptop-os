@@ -47,6 +47,7 @@ modules:
       - slurp
       - playerctl
       - swww
+      - rsms-inter-fonts
 
   - type: default-flatpaks
     configurations:
