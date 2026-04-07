@@ -53,6 +53,7 @@ modules:
       - cups-pk-helper
       - fprintd 
       - fprintd-pam
+      - jq
 
   - type: default-flatpaks
     configurations:
