@@ -29,6 +29,8 @@ modules:
       - qt6-qtdeclarative
       - qt6ct
       - qt6-qtmultimedia
+      - qt6-qtshadertools
+      - jemalloc 
       - nemo
       - nemo-fileroller
       - kitty
