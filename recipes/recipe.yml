@@ -30,8 +30,8 @@ modules:
       - qt6ct
       - qt6-qtmultimedia
       - qt6-qtshadertools
-      - qt6-imageformats 
-      - kimageformats
+      - qt6-qtimageformats
+      - kf6-kimageformats
       - jemalloc 
       - nemo
       - nemo-fileroller
