@@ -35,8 +35,6 @@ modules:
       - xdg-desktop-portal-gtk      
       - gnome-keyring               
       - brightnessctl
-      - network-manager-applet
-      - blueman
       - lxqt-policykit
       - wl-clipboard
       - power-profiles-daemon
