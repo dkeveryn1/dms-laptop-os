@@ -5,6 +5,6 @@ service = "greetd-spawn"
 vt = 1
 
 [default_session]
-command = "dms-greeter --command Hyprland -C /etc/greetd/hypr.conf"
+command = "dms-greeter --command start-hyprland -c /etc/greetd/hypr.conf"
 user = "greeter"
 
