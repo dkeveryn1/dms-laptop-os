@@ -59,6 +59,7 @@ modules:
       - jq
       - tailscale
       - lxqt-policykit
+      - imv
 
   - type: default-flatpaks
     configurations:
@@ -70,6 +71,8 @@ modules:
           - com.valvesoftware.Steam
           - com.moonlight_stream.Moonlight
           - com.github.tchx84.Flatseal  
+          - io.github.celluloid_player.Celluloid
+          - org.videolan.VLC
 
   - type: script
     scripts:
