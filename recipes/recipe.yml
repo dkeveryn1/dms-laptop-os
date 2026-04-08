@@ -20,7 +20,6 @@ modules:
       - dms
       - dgop
       - hyprland
-      - hyprland-guiutils
       - greetd
       - dms-greeter
       - quickshell 
@@ -59,7 +58,7 @@ modules:
       - fprintd-pam
       - jq
       - tailscale
-      - polkit-gnome
+      - lxqt-policykit
 
   - type: default-flatpaks
     configurations:
