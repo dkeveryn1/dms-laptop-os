@@ -66,7 +66,10 @@ modules:
         install:
           - io.github.kolunmi.Bazaar    
           - dev.zed.Zed                 
-          - app.zen_browser.zen   
+          - app.zen_browser.zen 
+          - com.valvesoftware.Steam
+          - com.moonlight_stream.Moonlight
+          - com.github.tchx84.Flatseal  
 
   - type: script
     scripts:
