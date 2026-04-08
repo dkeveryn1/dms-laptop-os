@@ -54,6 +54,7 @@ modules:
       - fprintd 
       - fprintd-pam
       - jq
+      - tailscale
 
   - type: default-flatpaks
     configurations:
