@@ -38,6 +38,9 @@ modules:
       - nemo
       - nemo-fileroller
       - kitty
+      - zsh
+      - zsh-autosuggestions
+      - zsh-syntax-highlighting
       - xdg-desktop-portal-hyprland 
       - xdg-desktop-portal-gtk      
       - gnome-keyring               
