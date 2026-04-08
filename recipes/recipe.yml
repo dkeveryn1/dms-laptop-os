@@ -60,6 +60,7 @@ modules:
       - tailscale
       - lxqt-policykit
       - imv
+      - xdg-user-dirs
 
   - type: default-flatpaks
     configurations:
