@@ -8,4 +8,3 @@ vt = 1
 command = "dms-greeter --command Hyprland -C /etc/greetd/hypr.conf"
 user = "greeter"
 
-
