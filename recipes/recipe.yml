@@ -80,6 +80,7 @@ modules:
           - io.github.celluloid_player.Celluloid
           - org.videolan.VLC
           - org.libreoffice.LibreOffice
+          - me.proton.Mail
 
   - type: brew
 
