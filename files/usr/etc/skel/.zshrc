@@ -23,7 +23,7 @@ alias zen="flatpak run app.zen_browser.zen"
 # --- Power Commands ---
 alias reboot="systemctl reboot" 
 alias poweroff="systemctl poweroff" 
-alias sleep="systemctl suspend" 
+alias suspend="systemctl suspend" 
 alias hibernate="systemctl hibernate" 
 
 # --- Git Shortcuts ---
