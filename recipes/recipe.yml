@@ -8,10 +8,6 @@ modules:
     files:
       - source: /usr
         destination: /usr
-  - type: akmods
-    install:
-      - xpadneo # <-- Driver for Xbox Bluetooth
-      - xone   # <-- Driver for Xbox Wireless Dongle
 
   - type: rpm-ostree
     repos:
