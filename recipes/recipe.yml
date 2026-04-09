@@ -66,6 +66,8 @@ modules:
       - imv
       - xdg-user-dirs
       - steam-devices
+      - starship
+      - jetbrains-mono-nerd-fonts 
 
   - type: default-flatpaks
     configurations:
