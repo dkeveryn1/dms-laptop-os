@@ -82,6 +82,7 @@ modules:
           - com.github.tchx84.Flatseal  
           - io.github.celluloid_player.Celluloid
           - org.videolan.VLC
+          - org.libreoffice.LibreOffice
 
   - type: brew
 
