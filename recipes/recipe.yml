@@ -19,7 +19,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-43/avengemedia-dms-fedora-43.repo
       - https://copr.fedorainfracloud.org/coprs/ashbuk/Hyprland-Fedora/repo/fedora-43/ashbuk-Hyprland-Fedora-fedora-43.repo
       - https://copr.fedorainfracloud.org/coprs/agonie/swww/repo/fedora-43/agonie-swww-fedora-43.repo
-      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-43/atim-starship-fedora-43.repo # <-- Add this line
+      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-43/atim-starship-fedora-43.repo 
 
 
     install:
