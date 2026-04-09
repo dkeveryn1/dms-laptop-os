@@ -38,3 +38,8 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # --- Initialize Starship Prompt ---
 eval "$(starship init zsh)"
+
+# --- System Fetch ---
+# This checks if fastfetch is installed. If it is, it runs it. If not, it fails silently.
+command -v fastfetch >/dev/null 2>&1 && fastfetch
+
