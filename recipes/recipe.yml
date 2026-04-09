@@ -83,6 +83,8 @@ modules:
           - io.github.celluloid_player.Celluloid
           - org.videolan.VLC
 
+  - type: brew
+
   - type: script
     scripts:
       - permissions.sh
