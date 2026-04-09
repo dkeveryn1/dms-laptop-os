@@ -69,6 +69,7 @@ modules:
       - xdg-user-dirs
       - steam-devices
       - starship
+      - swappy
 
   - type: default-flatpaks
     configurations:
