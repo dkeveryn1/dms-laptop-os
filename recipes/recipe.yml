@@ -8,7 +8,11 @@ modules:
     files:
       - source: /usr
         destination: /usr
- 
+  - type: akmods
+    install:
+      - xpadneo # <-- Driver for Xbox Bluetooth
+      - xone   # <-- Driver for Xbox Wireless Dongle
+
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/avengemedia/danklinux/repo/fedora-43/avengemedia-danklinux-fedora-43.repo
@@ -61,6 +65,7 @@ modules:
       - lxqt-policykit
       - imv
       - xdg-user-dirs
+      - steam-devices
 
   - type: default-flatpaks
     configurations:
