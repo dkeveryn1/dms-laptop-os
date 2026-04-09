@@ -67,7 +67,6 @@ modules:
       - xdg-user-dirs
       - steam-devices
       - starship
-      - jetbrains-mono-nerd-fonts 
 
   - type: default-flatpaks
     configurations:
@@ -85,6 +84,11 @@ modules:
   - type: script
     scripts:
       - permissions.sh
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - JetBrainsMono
 
   - type: systemd
     system:
