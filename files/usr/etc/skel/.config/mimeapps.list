@@ -25,3 +25,20 @@ video/mp4=io.github.celluloid_player.Celluloid.desktop
 video/x-matroska=io.github.celluloid_player.Celluloid.desktop
 video/webm=io.github.celluloid_player.Celluloid.desktop
 video/quicktime=io.github.celluloid_player.Celluloid.desktop
+
+# --- Office Suite (LibreOffice via Flatpak) ---
+# Word Documents
+application/msword=org.libreoffice.LibreOffice.writer.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=org.libreoffice.LibreOffice.writer.desktop
+application/vnd.oasis.opendocument.text=org.libreoffice.LibreOffice.writer.desktop
+
+# Spreadsheets
+application/vnd.ms-excel=org.libreoffice.LibreOffice.calc.desktop
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=org.libreoffice.LibreOffice.calc.desktop
+application/vnd.oasis.opendocument.spreadsheet=org.libreoffice.LibreOffice.calc.desktop
+
+# Presentations
+application/vnd.ms-powerpoint=org.libreoffice.LibreOffice.impress.desktop
+application/vnd.openxmlformats-officedocument.presentationml.presentation=org.libreoffice.LibreOffice.impress.desktop
+application/vnd.oasis.opendocument.presentation=org.libreoffice.LibreOffice.impress.desktop
+
