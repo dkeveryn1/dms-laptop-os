@@ -85,7 +85,6 @@ modules:
           - me.proton.Mail
           - io.missioncenter.MissionCenter
 
-  - type: brew
 
   - type: script
     scripts:
