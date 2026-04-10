@@ -39,6 +39,8 @@ modules:
       - jemalloc 
       - nemo
       - nemo-fileroller
+      - nemo-terminal
+      - nemo-preview
       - kitty
       - zsh
       - zsh-autosuggestions
