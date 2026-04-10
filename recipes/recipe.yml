@@ -99,3 +99,6 @@ modules:
       enabled:
         - greetd.service
         - tailscaled.service
+    user:
+      enabled:
+        - dms.service
