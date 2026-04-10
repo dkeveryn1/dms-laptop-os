@@ -81,6 +81,7 @@ modules:
           - org.videolan.VLC
           - org.libreoffice.LibreOffice
           - me.proton.Mail
+          - io.missioncenter.MissionCenter
 
   - type: brew
 
