@@ -70,9 +70,6 @@ modules:
       - starship
       - swappy
       - libfprint-tod
-      
-    remove:
-      - libfprint
 
   - type: default-flatpaks
     configurations:
