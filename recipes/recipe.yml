@@ -9,7 +9,7 @@ modules:
       - source: /usr
         destination: /usr
 
-    - type: rpm-ostree
+  - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/avengemedia/danklinux/repo/fedora-43/avengemedia-danklinux-fedora-43.repo
       - https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-43/avengemedia-dms-fedora-43.repo
