@@ -10,3 +10,7 @@ sed -i 's/^Name=Files/Name=Nemo/' /usr/share/applications/nemo.desktop
 
 # Replace generic folder icon with the specific Nemo icon
 sed -i 's/^Icon=system-file-manager/Icon=nemo/' /usr/share/applications/nemo.desktop
+
+# Create the root mount point for the Nix package manager
+mkdir -p /nix
+chmod 0755 /nix
