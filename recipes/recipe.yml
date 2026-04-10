@@ -9,14 +9,15 @@ modules:
       - source: /usr
         destination: /usr
 
-  - type: rpm-ostree
+    - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/avengemedia/danklinux/repo/fedora-43/avengemedia-danklinux-fedora-43.repo
       - https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-43/avengemedia-dms-fedora-43.repo
       - https://copr.fedorainfracloud.org/coprs/ashbuk/Hyprland-Fedora/repo/fedora-43/ashbuk-Hyprland-Fedora-fedora-43.repo
       - https://copr.fedorainfracloud.org/coprs/agonie/swww/repo/fedora-43/agonie-swww-fedora-43.repo
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-43/atim-starship-fedora-43.repo 
-      - copr:copr.fedorainfracloud.org:ferdiu:libfprint-tod
+      - https://copr.fedorainfracloud.org/coprs/ferdiu/libfprint-tod/repo/fedora-43/ferdiu-libfprint-tod-fedora-43.repo
+
 
 
     install:
