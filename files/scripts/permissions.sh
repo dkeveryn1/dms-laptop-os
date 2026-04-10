@@ -2,6 +2,7 @@
 
 chmod +x /usr/etc/skel/.config/hypr/scripts/quickshell/network/bluetooth_panel_logic.sh
 chmod +x /usr/etc/skel/.config/hypr/scripts/quickshell/network/wifi_panel_logic.sh
+chmod +x /usr/etc/skel/.config/hypr/scripts/power-manager.sh
 
 # --- Fix Nemo's Name and Icon ---
 # Replace 'Name=Files' with 'Name=Nemo'
