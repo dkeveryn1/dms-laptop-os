@@ -14,3 +14,4 @@ sed -i 's/^Icon=system-file-manager/Icon=nemo/' /usr/share/applications/nemo.des
 # Create the root mount point for the Nix package manager
 mkdir -p /nix
 chmod 0755 /nix
+chmod 755 /usr/lib64/libfprint-2/tod-1/libfprint-tod-goodix-53xc-0.0.4.so
