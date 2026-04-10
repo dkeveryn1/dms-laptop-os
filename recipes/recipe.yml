@@ -16,6 +16,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/ashbuk/Hyprland-Fedora/repo/fedora-43/ashbuk-Hyprland-Fedora-fedora-43.repo
       - https://copr.fedorainfracloud.org/coprs/agonie/swww/repo/fedora-43/agonie-swww-fedora-43.repo
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-43/atim-starship-fedora-43.repo 
+      - copr:copr.fedorainfracloud.org:ferdiu:libfprint-tod
 
 
     install:
@@ -68,6 +69,10 @@ modules:
       - steam-devices
       - starship
       - swappy
+      - libfprint-tod
+      
+    remove:
+      - libfprint
 
   - type: default-flatpaks
     configurations:
