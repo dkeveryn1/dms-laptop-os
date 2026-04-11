@@ -1,0 +1,34 @@
+name: Check Fedora 44 COPR Readiness
+on:
+  schedule:
+    - cron: '0 12 * * *' # Runs every day at 12:00 PM UTC
+  workflow_dispatch: # Allows you to run it manually via the website
+
+permissions:
+  issues: write # Required to automatically open the alert issue
+
+jobs:
+  check-urls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping COPRs
+        run: |
+          set -e # Fails the entire step if any curl command hits a 404
+          curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/avengemedia/danklinux/repo/fedora-44/avengemedia-danklinux-fedora-44.repo"
+          curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-44/avengemedia-dms-fedora-44.repo"
+          curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/ashbuk/Hyprland-Fedora/repo/fedora-44/ashbuk-Hyprland-Fedora-fedora-44.repo"
+          curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/agonie/swww/repo/fedora-44/agonie-swww-fedora-44.repo"
+          curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-44/atim-starship-fedora-44.repo"
+          curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/ferdiu/libfprint-tod/repo/fedora-44/ferdiu-libfprint-tod-fedora-44.repo"
+          
+      - name: Alert when Ready
+        if: success() # Only runs if ALL the curl commands above succeed
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "🚀 All COPRs are Ready for Fedora 44!",
+              body: "Update your recipe.yml to image-version: 44. Every single maintainer has successfully built their packages."
+            })
