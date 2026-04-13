@@ -84,7 +84,7 @@ modules:
           - org.libreoffice.LibreOffice
           - me.proton.Mail
           - io.missioncenter.MissionCenter
-
+          - org.localsend.localsend_app
 
   - type: script
     scripts:
