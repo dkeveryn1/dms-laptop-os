@@ -5,24 +5,29 @@ on:
   workflow_dispatch: # Allows you to run it manually via the website
 
 permissions:
-  issues: write # Required to automatically open the alert issue
+  issues: write
 
 jobs:
   check-urls:
     runs-on: ubuntu-latest
     steps:
       - name: Ping COPRs
+        id: check
         run: |
-          set -e # Fails the entire step if any curl command hits a 404
-          curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/avengemedia/danklinux/repo/fedora-44/avengemedia-danklinux-fedora-44.repo"
-          curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-44/avengemedia-dms-fedora-44.repo"
-          curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/ashbuk/Hyprland-Fedora/repo/fedora-44/ashbuk-Hyprland-Fedora-fedora-44.repo"
-          curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/agonie/swww/repo/fedora-44/agonie-swww-fedora-44.repo"
-          curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-44/atim-starship-fedora-44.repo"
-          curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/ferdiu/libfprint-tod/repo/fedora-44/ferdiu-libfprint-tod-fedora-44.repo"
+          # Use an if-statement so the script exits successfully even if a 404 is hit
+          if curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/avengemedia/danklinux/repo/fedora-44/avengemedia-danklinux-fedora-44.repo" && \
+             curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-44/avengemedia-dms-fedora-44.repo" && \
+             curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/ashbuk/Hyprland-Fedora/repo/fedora-44/ashbuk-Hyprland-Fedora-fedora-44.repo" && \
+             curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/agonie/swww/repo/fedora-44/agonie-swww-fedora-44.repo" && \
+             curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-44/atim-starship-fedora-44.repo" && \
+             curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/ferdiu/libfprint-tod/repo/fedora-44/ferdiu-libfprint-tod-fedora-44.repo"; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          fi
           
       - name: Alert when Ready
-        if: success() # Only runs if ALL the curl commands above succeed
+        if: steps.check.outputs.ready == 'true' # Only runs if the above script output true
         uses: actions/github-script@v7
         with:
           script: |
