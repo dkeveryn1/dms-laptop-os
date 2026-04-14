@@ -19,7 +19,6 @@ jobs:
              curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-44/avengemedia-dms-fedora-44.repo" && \
              curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/ashbuk/Hyprland-Fedora/repo/fedora-44/ashbuk-Hyprland-Fedora-fedora-44.repo" && \
              curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/agonie/swww/repo/fedora-44/agonie-swww-fedora-44.repo" && \
-             curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-44/atim-starship-fedora-44.repo" && \
              curl -sf -o /dev/null "https://copr.fedorainfracloud.org/coprs/ferdiu/libfprint-tod/repo/fedora-44/ferdiu-libfprint-tod-fedora-44.repo"; then
             echo "ready=true" >> "$GITHUB_OUTPUT"
           else
