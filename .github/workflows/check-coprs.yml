@@ -26,7 +26,7 @@ jobs:
           
       - name: Alert when Ready
         if: steps.check.outputs.ready == 'true' # Only runs if the above script output true
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             github.rest.issues.create({
