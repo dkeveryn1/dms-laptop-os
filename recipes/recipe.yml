@@ -45,7 +45,8 @@ modules:
       - zsh-syntax-highlighting
       - xdg-desktop-portal-hyprland 
       - xdg-desktop-portal-gtk      
-      - gnome-keyring               
+      - gnome-keyring       
+      - gnome-keyring-pam
       - power-profiles-daemon
       - cups
       - accountsservice
