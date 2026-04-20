@@ -99,4 +99,9 @@ modules:
       enabled:
         - greetd.service
         - tailscaled.service
+
+  - type: systemd
+    user:
+      enabled:
+        - dms.service
     
