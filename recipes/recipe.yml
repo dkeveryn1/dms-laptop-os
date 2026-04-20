@@ -8,8 +8,6 @@ modules:
     files:
       - source: /usr
         destination: /usr
-      - source: /etc
-        destination: /etc
 
   - type: rpm-ostree
     repos:
