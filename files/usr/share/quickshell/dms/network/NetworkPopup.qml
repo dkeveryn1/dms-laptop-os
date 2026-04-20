@@ -192,7 +192,7 @@ PanelWindow {
         readonly property color peach: _theme.peach
         // -------------------------------------------------------------------------
 
-        readonly property string scriptsDir: Quickshell.env("HOME") + "/.config/hypr/scripts/quickshell/network"
+        readonly property string scriptsDir: "/usr/share/quickshell/dms/network"
 
         readonly property color wifiAccent: Qt.lighter(window.sapphire, 1.15)
         readonly property color btAccent: window.mauve
