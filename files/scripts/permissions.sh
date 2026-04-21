@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-chmod +x /usr/share/quickshell/dms/network/*.sh
-
 chmod +x /usr/etc/skel/.config/hypr/scripts/power-manager.sh
 
 # --- Fix Nemo's Name and Icon ---
