@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 chmod +x /usr/etc/skel/.config/hypr/scripts/power-manager.sh
+chmod +x /usr/etc/skel/.config/quickshell/network/*.sh
 
 # --- Fix Nemo's Name and Icon ---
 # Replace 'Name=Files' with 'Name=Nemo'
