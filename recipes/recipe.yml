@@ -80,7 +80,7 @@ modules:
           - com.github.tchx84.Flatseal  
           - io.github.celluloid_player.Celluloid
           - org.videolan.VLC
-          - org.libreoffice.LibreOffice
+          - org.onlyoffice.desktopeditors
           - me.proton.Mail
           - io.missioncenter.MissionCenter
           - org.localsend.localsend_app
