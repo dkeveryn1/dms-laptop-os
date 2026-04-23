@@ -21,8 +21,8 @@ PanelWindow {
     }
 
     margins {
-        top: 60
-        right: 20
+        top: 5
+        right: 5
     }
 
     // Acts as an overlay widget, retaining keyboard focus for your Tab shortcut
@@ -31,14 +31,14 @@ PanelWindow {
 
     // Hardcoded dimensions prevent Hyprland from squishing/cropping the content
     width: 1000
-    height: 850
+    height: 800
     color: "transparent"
 
     IpcHandler {
         target: "network_widget"
         function toggle(): void {
-            // Toggle the window's native visibility
             rootWin.visible = !rootWin.visible
+            if (rootWin.visible) themeProcess.running = true
         }
     }
 
@@ -120,7 +120,7 @@ PanelWindow {
             } catch(e) {}
         }
 
-        // -------------------------------------------------------------------------
+        /// -------------------------------------------------------------------------
         // CUSTOM MATUGEN JSON READER
         // -------------------------------------------------------------------------
         Item {
@@ -146,36 +146,86 @@ PanelWindow {
             property color peach: "#fab387"
 
             Process {
-                command: ["cat", Quickshell.env("HOME") + "/.config/quickshell/qml_color.json"]
-                running: true
-                stdout: StdioCollector {
-                    onStreamFinished: {
-                        try {
-                            let data = JSON.parse(this.text.trim())
-                            let c = data.colors ? data.colors : data
+            id: themeProcess
+            command: ["cat", Quickshell.env("HOME") + "/.cache/DankMaterialShell/dms-colors.json"]
+            running: true
+            stdout: StdioCollector {
+                onStreamFinished: {
+                    try {
+                        let data = JSON.parse(this.text.trim())
 
-                            if (c.base) _theme.base = c.base
-                            if (c.mantle) _theme.mantle = c.mantle
-                            if (c.crust) _theme.crust = c.crust
-                            if (c.text) _theme.text = c.text
-                            if (c.subtext0) _theme.subtext0 = c.subtext0
-                            if (c.overlay0) _theme.overlay0 = c.overlay0
-                            if (c.overlay1) _theme.overlay1 = c.overlay1
-                            if (c.surface0) _theme.surface0 = c.surface0
-                            if (c.surface1) _theme.surface1 = c.surface1
-                            if (c.surface2) _theme.surface2 = c.surface2
+                        // Matugen usually nests the active scheme inside "dark" or "light"
+                        let c = data;
+                        if (data.colors) {
+                            if (data.colors.dark && data.colors.dark.background) c = data.colors.dark;
+                            else if (data.colors.light && data.colors.light.background) c = data.colors.light;
+                            else c = data.colors;
+                        } else if (data.dark && data.dark.background) {
+                            c = data.dark;
+                        } else if (data.light && data.light.background) {
+                            c = data.light;
+                        }
 
-                            if (c.mauve) _theme.mauve = c.mauve
-                            if (c.pink) _theme.pink = c.pink
-                            if (c.sapphire) _theme.sapphire = c.sapphire
-                            if (c.blue) _theme.blue = c.blue
-                            if (c.red) _theme.red = c.red
-                            if (c.maroon) _theme.maroon = c.maroon
-                            if (c.peach) _theme.peach = c.peach
-                        } catch(e) {}
-                    }
+                        // Handle both raw hex strings and Matugen's nested .default.hex objects
+                        function getHex(obj) {
+                            if (!obj) return null;
+                            if (typeof obj === "string") return obj.startsWith("#") ? obj : "#" + obj;
+                            if (obj.default && obj.default.hex) return obj.default.hex;
+                            if (obj.hex) return obj.hex;
+                            return null;
+                        }
+
+                        // Map Material Design 3 variables directly to Catppuccin names
+                        let bg = getHex(c.background) || getHex(c.base00)
+                        if (bg) _theme.base = bg
+
+                        let surf = getHex(c.surface) || getHex(c.base01)
+                        if (surf) _theme.mantle = surf
+
+                        let surfVar = getHex(c.surface_variant) || getHex(c.surface_container) || getHex(c.base02)
+                        if (surfVar) {
+                            if ("crust" in _theme) _theme.crust = surfVar
+                            if ("surface0" in _theme) _theme.surface0 = surfVar
+                            if ("surface1" in _theme) _theme.surface1 = surfVar
+                            if ("surface2" in _theme) _theme.surface2 = surfVar
+                        }
+
+                        let onSurf = getHex(c.on_surface) || getHex(c.base05)
+                        if (onSurf) _theme.text = onSurf
+
+                        let outline = getHex(c.outline) || getHex(c.outline_variant) || getHex(c.base04)
+                        if (outline) {
+                            if ("subtext0" in _theme) _theme.subtext0 = outline
+                            if ("overlay0" in _theme) _theme.overlay0 = outline
+                            if ("overlay1" in _theme) _theme.overlay1 = outline
+                        }
+
+                        let pri = getHex(c.primary) || getHex(c.base0D)
+                        if (pri) {
+                            if ("blue" in _theme) _theme.blue = pri
+                            if ("sapphire" in _theme) _theme.sapphire = pri
+                            if ("teal" in _theme) _theme.teal = pri
+                        }
+
+                        let sec = getHex(c.secondary) || getHex(c.base0E)
+                        if (sec) {
+                            if ("mauve" in _theme) _theme.mauve = sec
+                            if ("pink" in _theme) _theme.pink = sec
+                        }
+
+                        let err = getHex(c.error) || getHex(c.base08)
+                        let ter = getHex(c.tertiary) || getHex(c.base0B) || err
+                        if (err) {
+                            if ("red" in _theme) _theme.red = err
+                            if ("maroon" in _theme) _theme.maroon = err
+                            if ("peach" in _theme) _theme.peach = err
+                            if ("yellow" in _theme) _theme.yellow = err
+                            if ("green" in _theme) _theme.green = ter
+                        }
+                    } catch(e) {}
                 }
             }
+        }
         }
 
         readonly property color base: _theme.base
