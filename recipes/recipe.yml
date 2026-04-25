@@ -1,7 +1,7 @@
 name: dms-laptop-os
-description: Official DMS Experience on uBlue F43
+description: Official DMS Experience on uBlue F44
 base-image: ghcr.io/ublue-os/base-main
-image-version: 43
+image-version: 44
 
 modules:
   - type: files
@@ -11,10 +11,10 @@ modules:
 
   - type: rpm-ostree
     repos:
-      - https://copr.fedorainfracloud.org/coprs/avengemedia/danklinux/repo/fedora-43/avengemedia-danklinux-fedora-43.repo
-      - https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-43/avengemedia-dms-fedora-43.repo
-      - https://copr.fedorainfracloud.org/coprs/ferdiu/libfprint-tod/repo/fedora-43/ferdiu-libfprint-tod-fedora-43.repo
-      - https://copr.fedorainfracloud.org/coprs/nett00n/hyprland/repo/fedora-43/nett00n-hyprland-fedora-43.repo
+      - https://copr.fedorainfracloud.org/coprs/avengemedia/danklinux/repo/fedora-44/avengemedia-danklinux-fedora-44.repo
+      - https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-44/avengemedia-dms-fedora-44.repo
+      - https://copr.fedorainfracloud.org/coprs/ferdiu/libfprint-tod/repo/fedora-44/ferdiu-libfprint-tod-fedora-44.repo
+      - https://copr.fedorainfracloud.org/coprs/nett00n/hyprland/repo/fedora-44/nett00n-hyprland-fedora-44.repo
     install:
       - dms
       - dgop
