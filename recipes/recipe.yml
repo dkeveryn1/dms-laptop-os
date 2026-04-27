@@ -69,6 +69,7 @@ modules:
       - gamescope 
       - google-roboto-fonts
       - dbus-tools
+      - fira-code-fonts
 
   - type: default-flatpaks
     configurations:
