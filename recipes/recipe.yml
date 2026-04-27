@@ -67,6 +67,8 @@ modules:
       - swappy
       - libfprint-tod
       - gamescope 
+      - google-roboto-fonts
+      - inter-fonts
 
   - type: default-flatpaks
     configurations:
