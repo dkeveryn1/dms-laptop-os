@@ -71,6 +71,15 @@ modules:
       - dbus-tools
       - fira-code-fonts
 
+    replace:
+      - from-repo: https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
+        packages:
+          - kernel
+          - kernel-core
+          - kernel-modules
+          - kernel-modules-core
+          - kernel-modules-extra
+
   - type: default-flatpaks
     configurations:
       - scope: system
@@ -96,6 +105,8 @@ modules:
     fonts:
       nerd-fonts:
         - JetBrainsMono
+
+  - type: initramfs
 
   - type: systemd
     system:
