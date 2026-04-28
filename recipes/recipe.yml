@@ -9,6 +9,10 @@ modules:
       - source: /usr
         destination: /usr
 
+  - type: script
+    scripts:
+      - cachyos-depmod-fix.sh
+
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/avengemedia/danklinux/repo/fedora-44/avengemedia-danklinux-fedora-44.repo
