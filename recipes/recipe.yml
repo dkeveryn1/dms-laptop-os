@@ -18,6 +18,10 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
     install:
       - kernel-cachyos
+      - kernel-cachyos-core
+      - kernel-cachyos-modules
+      - kernel-cachyos-modules-core
+      - kernel-cachyos-modules-extra
       - dms
       - dgop
       - hyprland
