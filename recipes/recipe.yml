@@ -15,7 +15,9 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-44/avengemedia-dms-fedora-44.repo
       - https://copr.fedorainfracloud.org/coprs/ferdiu/libfprint-tod/repo/fedora-44/ferdiu-libfprint-tod-fedora-44.repo
       - https://copr.fedorainfracloud.org/coprs/nett00n/hyprland/repo/fedora-44/nett00n-hyprland-fedora-44.repo
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
     install:
+      - kernel-cachyos
       - dms
       - dgop
       - hyprland
@@ -70,15 +72,12 @@ modules:
       - google-roboto-fonts
       - dbus-tools
       - fira-code-fonts
-
-    replace:
-      - from-repo: https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
-        packages:
-          - kernel
-          - kernel-core
-          - kernel-modules
-          - kernel-modules-core
-          - kernel-modules-extra
+    remove:
+      - kernel
+      - kernel-core
+      - kernel-modules
+      - kernel-modules-core
+      - kernel-modules-extra
 
   - type: default-flatpaks
     configurations:
