@@ -20,8 +20,6 @@ modules:
       - kernel-cachyos
       - kernel-cachyos-core
       - kernel-cachyos-modules
-      - kernel-cachyos-modules-core
-      - kernel-cachyos-modules-extra
       - dms
       - dgop
       - hyprland
