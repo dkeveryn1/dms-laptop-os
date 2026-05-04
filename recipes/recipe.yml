@@ -78,6 +78,7 @@ modules:
       - google-roboto-fonts
       - dbus-tools
       - fira-code-fonts
+      - git
     remove:
       - kernel
       - kernel-core
