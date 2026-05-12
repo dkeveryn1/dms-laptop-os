@@ -102,6 +102,7 @@ modules:
           - me.proton.Mail
           - io.missioncenter.MissionCenter
           - org.localsend.localsend_app
+          - it.mijorus.gearlever
 
   - type: script
     scripts:
